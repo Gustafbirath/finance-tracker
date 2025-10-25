@@ -1,5 +1,6 @@
 import { createWorker } from 'tesseract.js';
 import * as pdfjsLib from 'pdfjs-dist';
+import type { RenderParameters } from 'pdfjs-dist/types/src/display/api';
 import type { BankReceiptData } from '../types/expense';
 
 // Configure PDF.js worker for Vite
@@ -59,7 +60,7 @@ async function pdfToImageDataURL(file: File): Promise<string> {
   await page.render({
     canvasContext: context,
     viewport: viewport,
-  }).promise;
+  } as RenderParameters).promise;
 
   // Clean up
   await pdf.destroy();

@@ -9,6 +9,6 @@ export default defineConfig({
         plugins: [['babel-plugin-react-compiler']],
       },
     }), tailwindcss()
-
   ],
+  base: './', // For GitHub Pages compatibility
 })
